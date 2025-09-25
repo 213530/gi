@@ -1,0 +1,180 @@
+
+     <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Jhon Sushi">
+    <title>Chocoart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho --> 
+    <header> 
+        <!-- Logo -->
+        <div class="logo">
+            <img src="img/logo.jpg" alt="Logo do Jhon Sushi">
+        </div>
+        <!-- Título -->
+        <div class="text">
+            <h1> Choco<span>Art</span> </h1>
+        </div>
+        <!-- Botão admin -->
+        <div class="admin-button">
+            <button class="admin" onclick="mostrarPainelAdmin()">
+                <i class="fas fa-user-circle"></i> 
+            </button>
+        </div>
+    </header>
+    <!-- Divisão cabeçalho -->
+    <div class="linha"></div>
+    <!-- Menu de navegação -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="link-nav">Mais q doces sensações..</a></li>
+            <li><a href="hossomaki.html" class="link-nav">complementos</a></li>
+            <li><a href="uramakis.html" class="link-nav"></a></li>
+            <li><a href="hots.html" class="link-nav"></a></li>
+            <li><a href="temaki.html" class="link-nav"></a></li>
+            <li><a href="combinado.html" class="link-nav"></a></li>
+            <li><a href="combinado.html" class="link-nav"></a></li>
+            <li><a href="javascript:void(0)" class="link-nav" onclick="expandirSacola()">
+                <i class="fa-solid fa-bag-shopping"></i> 
+                <span id="qtd-carrinho">0</span> itens
+            </a></li>
+        </ul>
+    </nav>
+
+    <!-- Carrinho Expandido -->
+    <div id="sacola" class="sacola" style="display: none;">
+        <button id="minimizar" class="minimizar" onclick="minimizarSacola()">
+            <i class="fa-light fa-x"></i>
+        </button>
+        <h3>Carrinho</h3>
+        <div id="itens-carrinho"></div>
+        <div id="total-carrinho">
+            <p>Total: R$ 0,00</p>
+        </div>
+        <button class="finalizar-compra" onclick="finalizarCompra()">Finalizar Compra</button>
+    </div>
+
+    <!-- Título Niguiri -->
+    <div class="niguiri">
+        Guloseimas
+    </div>
+    <!-- Contêiner dos Cards -->
+    <div class="container">
+        <!-- Card 1 -->
+        <div class="card">
+            <img src="img/brownie-e1727364130158.webp" alt="Niguiri Salmão">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Brownie</h2>
+                </div>
+                <div class="sub">
+                    <p>Feito de arroz e Salmão. É uma escolha muito leve e saborosa.</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 20,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar('Brownie', 20.00)">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <img src="img/cookie_437x342.jpg" alt="Niguiri camarão"> 
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Cookie</h2>
+                </div>
+                <div class="sub">
+                    <p>Feito de arroz e camarão. É uma escolha saborosa além de leve.</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 20,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar('Niguiri Camarão 05 unidades', 12.75)">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <img src="img/brigadeiro_437x342.jpg" alt="Niguiri Kani">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Brigadeiro</h2>
+                </div>
+                <div class="sub">
+                    <p>Feito de Kani (contém carangueijo) e Arroz, escolha deliciosa.</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 20,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar('Brigadeiro', 20.00)">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <img src="img/ganache_437x342.jpg" alt="Niguiri Atum">
+            <div class="descricao">
+                <div class="titulo-card">
+                    <h2>Ganache</h2>
+                </div>
+                <div class="sub">
+                    <p>Feito de Atum e arroz. É uma ótima opção para saborear o Atum.</p>
+                </div>
+                <div class="contain">
+                    <div class="preco">
+                        <p>Valor ítem R$ 20,00</p>
+                    </div>
+                    <div class="add">
+                        <button onclick="adicionar('Ganache',20.00)">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fim do contêiner -->
+    <!-- Rodapé -->
+    <footer>
+        <div class="logo1">Choco<span>art</span></div>
+        <!-- Anúncio -->
+        <div class="anuncio">
+            <h6>Aceitamos encomendas para encomendas!</h6>
+        </div>
+        <!-- Mídias -->
+        <div id="midia">
+            <ul>
+                <li><a href="https://www.whatsapp.com/" target="_blank" class="link-what"><i class="fa-brands fa-whatsapp"></i></a></li>
+                <li><a href="https://www.facebook.com/" target="_blank" class="link-face"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank" class="link-insta"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- Sacola Flutuante -->
+    <div class="floating-bar" id="floating-bar">
+        <span id="qtd-itens-sacola">0</span> itens
+        <button onclick="expandirSacola()">Ver Sacola</button>
+    </div>
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
