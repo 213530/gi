@@ -399,7 +399,7 @@ function enviarNotaWhatsApp(event) {
             exibirMensagem('Por favor, preencha todos os campos de endereço para entrega.', true);
             return;
         }
-
+        let mensagem = '';
         mensagem += `*Endereço:*%0A`;
         mensagem += `CEP: ${cep}%0A`;
         mensagem += `Rua: ${rua}, Nº: ${numero}%0A`;
